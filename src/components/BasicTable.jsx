@@ -1,6 +1,9 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
+
 import BasicTableRow from "./BasicTableRow";
+
+import "./BasicTable.css";
 
 const BasicTable = () => {
 
@@ -30,18 +33,24 @@ const BasicTable = () => {
         key={row.id}
         id={row.id}
         file={row.file}
-        fileType={row.fileType}
         onDelete={handleDeleteRow} // NOTE: not `handleDeleteRow()`
+        fileType={row.fileType}
       />
     ));
   };
 
+  const deleteAllTableRows = () => {
+    setTableData([]);
+  };
+
   return (
-    <div>
-      <table>
+    <div id="basic-table-container">
+      <button className="button-basic button-delete" onClick={() => deleteAllTableRows()}>Delete All</button>
+      <table id="basic-table">
         <thead>
           <tr>
             <th>File</th>
+            <th>Delete</th>
             <th>fileType</th>
           </tr>
         </thead>

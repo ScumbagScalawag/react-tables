@@ -1,12 +1,12 @@
 // CORRECT: onDelete={funct}. INCORRECT: onDelete={funct()}
-const BasicTableRow = ({ id, file , fileType, onDelete }) => {
+const BasicTableRow = ({ id, file, onDelete, fileType }) => {
   return (
     <tr> 
       <td>{file}</td>
-      <td>{fileType}</td>
       <td>
-        <button onClick={() => onDelete(id)}>Delete</button>
+        <button className="button-basic button-delete"onClick={() => onDelete(id)}>Delete</button>
       </td>
+      <td>{fileType}</td>
     </tr>
   );
 };

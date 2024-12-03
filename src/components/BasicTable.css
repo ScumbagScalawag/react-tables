@@ -1,0 +1,89 @@
+div {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content (optional) */
+  margin-top: 50px; /* Add some spacing from the top */
+  flex-direction: column; /* Stack elements vertically */
+  width: 100%;
+}
+
+/* Center the container on the page */
+#basic-table-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content (optional) */
+  margin-top: 50px; /* Add some spacing from the top */
+  flex-direction: column; /* Stack elements vertically */
+  width: 100%;
+}
+
+/* Table container for flex layout */
+#basic-table {
+  display: flex;
+  flex-direction: column; /* Allow table rows to stack vertically */
+  width: 60%; /* Adjust table width */
+  max-width: 1200px; /* Set a maximum width to prevent it from growing too large */
+  border: 1px solid #ddd; /* Add a border around the table */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+/* Table header (fixed row) */
+thead {
+  display: flex;
+  width: 100%; /* Take the full width of the table */
+  background-color: #668cff; /* Blue background for the header */
+  color: white; /* White text color */
+}
+
+thead th {
+  flex: 1; /* All columns take equal width */
+  padding: x; /* Add padding to the header cells */
+  text-align: center; /* Center align text */
+  border-bottom: 2px solid #ddd; /* Add a bottom border */
+}
+
+/* Table body for rows */
+tbody {
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+  width: 100%; /* Ensure rows take full width */
+}
+
+/* Table row */
+tr {
+  display: flex;
+  width: 100%; /* Ensure each row stretches across the table */
+  border-bottom: 1px solid #ddd; /* Add a light bottom border */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Add alternating row colors */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Add a light hover effect */
+}
+
+/* Table cell */
+td {
+  flex: 1; /* All cells take equal width */
+  padding: 10px; /* Add padding to data cells */
+  text-align: center; /* Center align text */
+}
+
+/* Basic Button */
+.button-basic {
+  padding: 5px 10px; /* Add padding to button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.button-delete {
+  background-color: #ff6666; /* Red background for delete button */
+  color: white; /* White text */
+}
+
+.button-delete:hover {
+  background-color: #ff4d4d; /* Darker red on hover */
+}
