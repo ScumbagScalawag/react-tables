@@ -1,41 +1,38 @@
+import { v4 as uuidv4 } from "uuid";
+import { useState } from "react";
+import BasicTableRow from "./BasicTableRow";
+
 const BasicTable = () => {
+
+  const [tableData, setTableData] = useState([
+    { id: uuidv4(), file: "face.png", fileType: "jpeg" },
+    { id: uuidv4(), file: "arms.png", fileType: "jpeg" },
+    { id: uuidv4(), file: "hands.png", fileType: "jpeg" },
+    { id: uuidv4(), file: "fingers.png", fileType: "jpeg" },
+  ]);
+
+  const renderTableRows = () => {
+    return tableData.map(row => (
+      <BasicTableRow
+        key={row.id}
+        file={row.file}
+        fileType={row.fileType}
+      />
+    ));
+  };
+
   return (
     <div>
       <table>
         <thead>
           <tr>
-            <th>First</th>
-            <th>Second</th>
-            <th>Third</th>
+            <th>File</th>
+            <th>fileType</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>Alpha</td>
-            <td>Bravo</td>
-            <td>Charlie</td>
-          </tr>
-          <tr>
-            <td>Delta</td>
-            <td>Echo</td>
-            <td>Foxtrot</td>
-          </tr>
-          <tr>
-            <td>Golf</td>
-            <td>Hotel</td>
-            <td>India</td>
-          </tr>
-          <tr>
-            <td>Juliet</td>
-            <td>Kilo</td>
-            <td>Lima</td>
-          </tr>
-          <tr>
-            <td>Mike</td>
-            <td>November</td>
-            <td>Oscar</td>
-          </tr>
+          {renderTableRows()}
         </tbody>
       </table>
     </div>
